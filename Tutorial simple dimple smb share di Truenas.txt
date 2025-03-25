@@ -1,0 +1,59 @@
+1. Kalau belum create pool, create pool.
+
+Truenas akan auto buat datasets, tapi dataset tu is a master dataset. U still need to make a subdataset of the main dataset. So...
+
+3. dekat dataset master, tekan arrow kanan, then tekan add dataset.
+
+4. Bagi nama, and set Dataset Preset ke SMB, then bagi nama SMB share tu (nama SMB tu nnti akan pakai masa nak connect dari Windows PC). Tekan save.
+
+5. Then, pergi Credentials > User.
+
+6. Tekan Add
+
+7. Isi Full Name, Username, dan Password SAHAJA. Skrol bawah, make sure SMB user is ticked.
+
+8. Then, menu tepi, pergi ke Shares.
+
+9. Kan ada nama Windows (SMB) share yg kita buat tadi kan, ko tekan yg ada lambang Shield tu (Edit Filesystem ACL).
+
+10. Then, tkn "+ Add Item"
+
+11. Who = user, user = (nama user yg kau buat tadi)
+
+12. Tu je, then tekan "Save ACL"
+
+13. Now, cer add network drive kat windows, masukkan \\<address>\<nama-share>, tick Use Different Login Credentials.
+
+14. Tekan connect, then dia akan prompt utk masukkn user and password. Ni kau masukkan new user yg kau dah buat tadi.
+
+15. PROFIT!!!!
+
+
+
+
+
+## How to create Duplicati server with access to the files:
+
+1. Left pane, go to Apps.
+2. click Discover Apps
+3. Search for Duplicati, click.
+4. At right pane, go to Storage Configuration.
+5. At Additional Storage, click Add.
+6. Type, change it to Host Path.
+7. Tick Read Only.
+8. On mount path, write /vault-1 (or anything u like)
+9. !IMPORTANT! Enable ACL.
+10. Host Path, select the dataset that u have data in.
+11. ACL Entries, click Add.
+12. ID type, set to USER.
+13. ID: 568 (should be same with the User n Group Configuration, which is also 568).
+14. Access, set Read Access.
+15. Tick Force Flag.
+16. Jump to Duplicati Configuration (right pane)
+17. Timezone, set to your timezone.
+18. Set UI password (make sure remember it, you will login into the webUI).
+19. That's All. Scroll to the bottom, and click Install (blue button).
+
+iX-Duplicati by default only give `/data` directory as everything duplicati stores, and `/tmp/` for it's temporary backup location b4 upload to cloud. This can cause issues where `/tmp/` file is not owned by user 568. To circumvent this, change `tempdir` (at config wizard, step number 5, Advanced Options, Add Advanced Option: tempdir) to `/data/temp/`.
+
+After that, go to the Duplicati App, login into its shell, then `mkdir /data/temp`

@@ -1,0 +1,16 @@
+1. Go to Shares in the TrueNAS web interface.
+2. Under UNIX (NFS) Share Targets, click Add.
+3. Populate the Path field by selecting an existing dataset or creating a new one.
+4. TrueNAS may prompt you to Start NFS service. Click Start. If no dialog prompt, go to Services and toggle the NFS service on. Set it to Start Automatically if you want it to activate after TrueNAS boots.
+
+## Mount the NFS Share on Client:
+Create a local directory for the NFS mount using sudo mkdir /path/to/local/mount.
+Mount the shared directory using sudo mount -t nfs {IPADDRESS}:{dataset path} /path/to/local/mount, replacing {IPADDRESS} with your TrueNAS system's IP address and {dataset path} with the path to your NFS share.
+
+    Access the Share: Navigate to the local mount directory to view or modify files as needed.
+
+For more detailed instructions, you can refer to the TrueNAS Documentation.
+
+This response is based on TrueNAS SCALE 24.10 documentation.
+
+Your feedback helps make this bot better! Click the thumbs-up or thumbs-down icons to rate responses. Thanks!
