@@ -1,7 +1,7 @@
 ### Hi there 👋
 
 - 🙎‍♂️ A software hobbyist, a student, and highly curious person.
-- 🌱 Currently learning Docker Containerization, Flutterflow, FastAPI, Laravel and TailwindCSS!
-- 🔭 Mainly developing in Python. Great at web dev (HTML, SCSS/Tw, TypeScript, Vite Bundler) as well!
-- ⚡ My biggest side interest is Automation, UI/UX Experience, and make this life less crap.
-- ✨ Discovering on-prem/ local AI inferencing, like LMStudio and ComfyUI.
+- 🌱 Currently learning Docker, Self Hosting, Laravel and TailwindCSS!
+- 🔭 Mainly developing in Python. Design stuff like Web dev and creative design also fav but not currently looking into!
+- ⚡ My biggest side interest is Automation, Crazy Stuff, and make this life less crap.
+- ✨ Discovering on-prem/ local AI inferencing, like Generative AI.
